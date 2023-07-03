@@ -7,4 +7,3 @@ export * from './paymob/paymob.module';
 export * from './paymob/axios';
 export * from '././paymob/interfaces/config';
 export * from '././paymob/interfaces/payment-options';
-
