@@ -58,7 +58,7 @@ export class PaymobService {
 
   async registerOrder(
     token: string,
-    integration_id,
+    integration_id: string,
     profile_id: string,
     order: PaymobOrderDto,
   ) {
