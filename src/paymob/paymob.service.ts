@@ -116,7 +116,7 @@ export class PaymobService {
       postal_code: 'NA',
       city: 'NA',
       country: 'NA',
-      last_name: ' -BlueBus',
+      last_name: 'rawasi',
       state: 'NA',
     };
   }
