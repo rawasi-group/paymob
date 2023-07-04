@@ -39,3 +39,4 @@ export class RegisterOrderDTO {
   currency: string;
   merchant_order_id: string;
 }
+export class PaymobCallBackDTO {}
