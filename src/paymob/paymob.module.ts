@@ -12,6 +12,7 @@ export class PaymobModule {
         { provide: PaymobService, useValue: new PaymobService(options) },
       ],
       module: PaymobModule,
+      exports: [PaymobService],
     };
   }
 }
