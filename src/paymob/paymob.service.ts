@@ -13,7 +13,7 @@ export class PaymobService {
   constructor(private readonly config: Config) {}
 
   async createDummyTransaction() {
-    const integrationId = '262725';
+    const integrationId = '3976556';
     const iframeId = '236196';
     const order: PaymobOrderDto = {
       order_id: `TX-${Date.now()}`,
