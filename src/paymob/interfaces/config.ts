@@ -4,6 +4,8 @@
 export interface Config {
   currency: string;
   api_key: string;
+  integration_id: string;
+  iframe_id: string;
   expiration: string;
   delivery_needed: string;
   hostURL: string;

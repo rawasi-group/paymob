@@ -23,8 +23,6 @@ export class PaymobService {
       user_name: 'ahmedamin',
     };
     const authenticate = await this.authenticate();
-
-    console.info(authenticate);
     const registeredOrder = await this.registerOrder(
       authenticate.token,
       integrationId,
@@ -33,6 +31,32 @@ export class PaymobService {
     );
 
     console.info(registeredOrder);
+    const res = await this.generatePaymentKey(
+      order,
+      authenticate.token,
+      integrationId,
+      registeredOrder.id,
+    );
+
+    return `https://accept.paymobsolutions.com/api/acceptance/iframes/${iframeId}?payment_token=${res.token}`;
+  }
+  async generatePaymentLink(paymobOrderDto: PaymobOrderDto) {
+    const integrationId = this.config.integration_id;
+    const iframeId = this.config.iframe_id;
+    const order: PaymobOrderDto = {
+      order_id: paymobOrderDto.order_id,
+      amount_cents: paymobOrderDto.amount_cents,
+      user_phone: paymobOrderDto.user_phone,
+      user_email: paymobOrderDto.user_email,
+      user_name: paymobOrderDto.user_name,
+    };
+    const authenticate = await this.authenticate();
+    const registeredOrder = await this.registerOrder(
+      authenticate.token,
+      integrationId,
+      authenticate.profile.id,
+      order,
+    );
     const res = await this.generatePaymentKey(
       order,
       authenticate.token,

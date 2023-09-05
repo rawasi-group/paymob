@@ -15,7 +15,7 @@ export class PaymobController {
     return this.paymobService.createDummyTransaction();
   }
   @Post('callback')
-  processPaymobCallback(@Body() paymobCallBackDTO: any) {
+  async processPaymobCallback(@Body() paymobCallBackDTO: any) {
     this.eventEmitter.emit(
       'paymob.callback',
       new PaymobCallbackEvent(paymobCallBackDTO),
