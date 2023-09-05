@@ -30,11 +30,11 @@ import { EventEmitterModule } from '@nestjs/event-emitter';
       api_key: process.env.ACCEPT_API_KEY,
       currency: process.env.ACCEPT_CURRENCY,
       hostURL: process.env.ACCEPT_BASE_URL,
+      integration_id: process.env.ACCEPT_INTEGERATION_ID,
+      iframe_id: process.env.ACCEPT_IFRAM_ID,
     }),
   ],
   controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
-
-
